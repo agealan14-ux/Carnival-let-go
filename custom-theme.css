@@ -1,0 +1,39 @@
+:root { --r-background-color:#35105b; --r-main-color:#fff; --r-heading-color:#f4c542; --r-main-font:Arial,sans-serif; --r-heading-font:Arial,sans-serif; }
+html,body { margin:0;width:100%;height:100%;overflow:hidden; }
+.reveal,.reveal .slides { width:100%;height:100%; }
+.reveal .slides>section { width:100%;height:100%;box-sizing:border-box;padding:0; }
+.reveal .slides>section.cover { background:url('imagen-portada.jpg') center/100% 100% no-repeat; }
+.topic-slide { background:#35105b; }
+.slide-content { height:100%; box-sizing:border-box; padding:5% 7% 13%; overflow:hidden; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; text-align:left; gap:.55rem; }
+.slide-content h2 { font-size:clamp(1.3rem,5.1vw,2rem); line-height:1.1; margin:0 0 .4rem; color:#f4c542; }
+.slide-content h3 { font-size:clamp(1rem,4vw,1.35rem); line-height:1.15; color:#fff; margin:.25rem 0 0; }
+.slide-content p,.slide-content li { font-size:clamp(.82rem,3.1vw,1.08rem); line-height:1.32; margin:0; }
+.slide-content ul { margin:.1rem 0; padding-left:1.2rem; }
+.media-slot { width:100%; flex:1; min-height:8%; border:1px dashed rgba(244,197,66,.55); border-radius:14px; margin-top:.4rem; }
+.video-slot { position:absolute; inset:0; z-index:-1; pointer-events:none; }
+.video-hero-ready { background:#35105b; }
+.deck-controls { position:fixed; z-index:1000; inset:auto 0 0; height:76px; display:flex; align-items:center; justify-content:space-between; padding:0 22px; pointer-events:none; }
+.nav-button { pointer-events:auto; display:grid; place-items:center; width:52px;height:52px;border:1px solid rgba(255,255,255,.58);border-radius:18px; background:rgba(53,16,91,.78);color:#f4c542;font:500 32px/1 Arial,sans-serif; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,.28); backdrop-filter:blur(10px); transition:transform .18s ease,background .18s ease,border-color .18s ease; }
+.nav-button:hover { transform:translateY(-3px); background:#35105b; border-color:#f4c542; }
+.nav-button:active { transform:scale(.94); }
+.nav-button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+.progress-wrap { pointer-events:none; position:absolute; left:50%; transform:translateX(-50%); bottom:16px; width:52%; display:flex; flex-direction:column; align-items:center; gap:5px; color:#fff; }
+.progress-track { width:100%; height:5px; border-radius:9px; background:rgba(255,255,255,.3); overflow:hidden; }
+.progress-bar { height:100%; width:7.6923%; border-radius:inherit; background:#f4c542; transition:width .35s ease; }
+.slide-counter { font:600 12px/1 Arial,sans-serif; letter-spacing:.08em; text-shadow:0 1px 5px #35105b; }
+
+.hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; pointer-events:none; }
+.video-hero-ready .slide-content { position:relative; z-index:1; background:rgba(53,16,91,.68); }
+.media-slot img { display:block; width:100%; height:100%; max-height:22vh; object-fit:cover; }
+.topic-slide[data-topic="2"] .media-slot { position:relative; width:100%; flex:0 0 27%; min-height:0; margin-top:.4rem; border:0; border-radius:14px; overflow:hidden; background:url("imagen d2.jpg") center/cover no-repeat; }
+.topic-slide[data-topic="2"] .media-slot img { display:none; }
+.media-error { display:block; padding:.7rem; color:#fff; background:rgba(145,20,35,.92); border:1px solid #f4c542; border-radius:10px; font-size:clamp(.72rem,2.5vw,.95rem); font-weight:700; text-align:center; }
+.media-slot:not(:has(img)) { display:flex; align-items:center; justify-content:center; }
+.video-slot { display:flex; align-items:center; justify-content:center; }
+.video-hero-ready .video-slot { display:none; }
+
+.zoomable-image { cursor:zoom-in; }
+.image-zoom-overlay { position:fixed; inset:0; z-index:2000; display:grid; place-items:center; padding:5vw; box-sizing:border-box; background:rgba(15,8,24,.94); cursor:zoom-out; }
+.image-zoom-overlay img { max-width:94vw; max-height:90vh; object-fit:contain; border-radius:12px; }
+.image-zoom-close { position:absolute; top:18px; right:18px; width:48px; height:48px; border:1px solid #fff8; border-radius:50%; background:#35105b; color:#fff; font-size:30px; cursor:pointer; }
+
